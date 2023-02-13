@@ -7,7 +7,7 @@ import boto3
 s3_client = boto3.client('s3',
     aws_access_key_id = 'AKIA5B256M6M4Z6LAAHE',
     aws_secret_access_key = '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',
-    region_name = 'us-east-1',)
+    region_name = 'us-east-1')
 
 session = boto3.Session(aws_access_key_id='AKIA5B256M6M4Z6LAAHE', aws_secret_access_key='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')
 s3 = session.resource('s3')
@@ -36,7 +36,7 @@ orders_No_delivered = dataframes[9]['Order-nulos-lau']
 # conexiones_X_estado = dataframes[10]['conectividad']
 # geolocation = dataframes[11]['geolocation']
 
-app = FastAPI(title='xdxd',description='matenme')
+app = FastAPI(title='Olist')
 
 @app.get('/devolver una tabla/')
 async def get_max_duration(nombre:str):
@@ -45,7 +45,7 @@ async def get_max_duration(nombre:str):
         if nombre == key_dicc :
             data_to_return = data[key_dicc]
     
-    return {data_to_return.to_json()}
+    return {data_to_return.to_csv()}
 
 @app.get('/devolver un producto/')
 async def get_max_duration(tipo:str):
@@ -65,3 +65,16 @@ async def get_max_duration(prod_id:str):
     
     prom = data['review_score'].mean()
     return {'el puntaje promedio es ' : round(prom,1)}
+
+# cargando closed-deals
+# cargando custumers
+# cargando marketing
+# cargando order-items
+# cargando sellers
+# cargando order-sin-nulos
+# cargando payment
+# cargando products
+# cargando reviews
+# cargando Order-nulos-lau
+# cargando conectividad
+# cargando geolocation

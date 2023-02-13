@@ -6,6 +6,19 @@ from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import LabelEncoder
 from scipy.sparse import csr_matrix
 le = LabelEncoder()
+from streamlit.components.v1 import html
+
+# Define your javascript
+my_js = """
+alert("Hola mundo");
+"""
+
+# Wrapt the javascript as html code
+my_html = f"<script>{my_js}</script>"
+
+# Execute your app
+st.title("Javascript example")
+html(my_html)
 
 df_show =  pd.read_csv('../datasets_streamlit/df_show.csv')
 df =  pd.read_csv('../datasets_streamlit/df.csv')
@@ -40,6 +53,7 @@ def find_similar_products(product_id,matrix,k):
 
 st.title("Modelo de Machine Learning: Sistema de recomendaciones")
 st.markdown('###')
+st.sidebar.markdown('dashboard')
 st.dataframe(df_show)
 product_label_encoder = st.number_input("ingrese el numero del producto",step=1,format="%i")
 if product_label_encoder:
