@@ -39,8 +39,8 @@ if menu == 'Analisis principal, power bi':
     import matplotlib.pyplot as plt
     import seaborn as sns
     # Lectura de los datasets y creación de los dataframes
-    datasets = os.listdir('../datasets_clean')
-    dataframes = {f'{csv}': pd.read_csv(f'../datasets_clean/{csv}') for csv in datasets} # Se crean y se guardan en un diccionario
+    datasets = os.listdir('./datasets_clean')
+    dataframes = {f'{csv}': pd.read_csv(f'./datasets_clean/{csv}') for csv in datasets} # Se crean y se guardan en un diccionario
 
     #Se guardan los dataframes en variables para poder ser usados con más façilidad.
     closed_deals = dataframes['closed_deals.csv']
