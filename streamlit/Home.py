@@ -38,22 +38,22 @@ if menu == 'Analisis principal, power bi':
     from dateutil.relativedelta import relativedelta
     import matplotlib.pyplot as plt
     import seaborn as sns
-    # Lectura de los datasets y creación de los dataframes
-    datasets = os.listdir('./datasets_clean')
-    dataframes = {f'{csv}': pd.read_csv(f'./datasets_clean/{csv}') for csv in datasets} # Se crean y se guardan en un diccionario
 
     #Se guardan los dataframes en variables para poder ser usados con más façilidad.
-    closed_deals = dataframes['closed_deals.csv']
-    conectividad= dataframes['conectividad_X_Estado.csv']
-    customers = dataframes['customers.csv']
-    geolocation = dataframes['geolocation.csv']
-    marketing_qualified_leads = dataframes['marketing_qualified_leads.csv']
-    order_items = dataframes['order_items.csv']
-    order_payments = dataframes['order_payments.csv']
-    order_reviews = dataframes['order_reviews.csv']
-    products = dataframes['products.csv']
-    sellers = dataframes['sellers.csv']
-    orders = dataframes['orders.csv']
+    conectividad= pd.read_csv('./datasets_clean/conectividad_X_Estado.csv')
+
+    closed_deals = pd.read_csv('./datasets_clean/closed_deals.csv')
+    customers = pd.read_csv('./datasets_clean/customers.csv')
+    geolocation = pd.read_csv('./datasets_clean/geolocation.csv')
+    marketing_qualified_leads = pd.read_csv('./datasets_clean/marketing_qualified_leads.csv')
+    order_items = pd.read_csv('./datasets_clean/order_items.csv')
+
+    order_payments = pd.read_csv('./datasets_clean/order_payments.csv')
+    order_reviews = pd.read_csv('./datasets_clean/order_reviews.csv')
+    orders = pd.read_csv('./datasets_clean/orders.csv')
+    products = pd.read_csv('./datasets_clean/products.csv')
+    sellers = pd.read_csv('./datasets_clean/sellers.csv')
+
     #Organizando los formatos de fecha en el dataframe de orders
     orders['order_estimated_delivery_date'] = pd.to_datetime(orders.order_estimated_delivery_date)
     orders['order_purchase_timestamp'] = pd.to_datetime(orders.order_purchase_timestamp)
