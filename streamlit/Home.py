@@ -40,19 +40,19 @@ if menu == 'Analisis principal, power bi':
     import seaborn as sns
 
     #Se guardan los dataframes en variables para poder ser usados con más façilidad.
-    conectividad= pd.read_csv('datasets_clean/conectividad_X_Estado.csv')
+    conectividad= pd.read_csv('streamlit/datasets_clean/conectividad_X_Estado.csv')
 
-    closed_deals = pd.read_csv('datasets_clean/closed_deals.csv')
-    customers = pd.read_csv('datasets_clean/customers.csv')
-    geolocation = pd.read_csv('datasets_clean/geolocation.csv')
-    marketing_qualified_leads = pd.read_csv('datasets_clean/marketing_qualified_leads.csv')
-    order_items = pd.read_csv('datasets_clean/order_items.csv')
+    closed_deals = pd.read_csv('streamlit/datasets_clean/closed_deals.csv')
+    customers = pd.read_csv('streamlit/datasets_clean/customers.csv')
+    geolocation = pd.read_csv('streamlit/datasets_clean/geolocation.csv')
+    marketing_qualified_leads = pd.read_csv('streamlit/datasets_clean/marketing_qualified_leads.csv')
+    order_items = pd.read_csv('streamlit/datasets_clean/order_items.csv')
 
-    order_payments = pd.read_csv('datasets_clean/order_payments.csv')
-    order_reviews = pd.read_csv('datasets_clean/order_reviews.csv')
-    orders = pd.read_csv('datasets_clean/orders.csv')
-    products = pd.read_csv('datasets_clean/products.csv')
-    sellers = pd.read_csv('datasets_clean/sellers.csv')
+    order_payments = pd.read_csv('streamlit/datasets_clean/order_payments.csv')
+    order_reviews = pd.read_csv('streamlit/datasets_clean/order_reviews.csv')
+    orders = pd.read_csv('streamlit/datasets_clean/orders.csv')
+    products = pd.read_csv('streamlit/datasets_clean/products.csv')
+    sellers = pd.read_csv('streamlit/datasets_clean/sellers.csv')
 
     #Organizando los formatos de fecha en el dataframe de orders
     orders['order_estimated_delivery_date'] = pd.to_datetime(orders.order_estimated_delivery_date)
@@ -254,9 +254,9 @@ if menu == 'Machine learning: sistema de recomendaciones':
     from scipy.sparse import csr_matrix
     le = LabelEncoder()
 
-    df_show =  pd.read_csv('datasets_streamlit/df_show.csv')
-    df =  pd.read_csv('datasets_streamlit/df.csv')
-    df_test =  pd.read_csv('datasets_streamlit/df_test.csv')
+    df_show =  pd.read_csv('streamlit/datasets_streamlit/df_show.csv')
+    df =  pd.read_csv('streamlit/datasets_streamlit/df.csv')
+    df_test =  pd.read_csv('streamlit/datasets_streamlit/df_test.csv')
 
     N = df['customer_le'].unique().shape[0]
     M = df['product_le'].unique().shape[0]
